@@ -9,12 +9,12 @@ import javax.persistence.Table;
 
 
 @Entity  
-@Table(name="Exchange_Value")
+@Table(name="Currency_Table")
 public class CurrencyConversionFactor 
 {
 	@Id  
 	@Column(name="id")
-	private Long id; 
+	private int id; 
 	
 	@Column(name="currency_from")
 	private String from;
@@ -31,17 +31,17 @@ public class CurrencyConversionFactor
 		
 	}
 	
-	public CurrencyConversionFactor(Long id, String from, String to, BigDecimal conversionMultiple) {
+	public CurrencyConversionFactor(int id, String from, String to, BigDecimal conversionMultiple) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.to = to;
 		this.conversionMultiple = conversionMultiple;
 	}
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getFrom() {
