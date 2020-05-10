@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CurrencyConversionController 
 
 {
-	@GetMapping("/currency-exchange/from/{from}/to/{to}")       //where {from} and {to} are path variable  
+	@GetMapping("/currency-conversion/from/{from}/to/{to}")       //where {from} and {to} are path variable  
 	public CurrencyConersionValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to)  //from map to USD and to map to INR  
 	{     
-	return new  CurrencyConersionValue(1000L, from, to, BigDecimal.valueOf(65));  
+	return new  CurrencyConersionValue(1000, from, to, BigDecimal.valueOf(65));  
 	}  
 	
 }

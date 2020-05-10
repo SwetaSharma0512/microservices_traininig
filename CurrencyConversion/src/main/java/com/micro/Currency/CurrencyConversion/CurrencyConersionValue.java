@@ -1,24 +1,39 @@
 package com.micro.Currency.CurrencyConversion;
 
 import java.math.BigDecimal;
+import javax.persistence.Column;  
+import javax.persistence.Entity;  
+import javax.persistence.Id;  
+import javax.persistence.Table;  
 
+
+@Entity  
+@Table(name="Exchange_Value") 
 public class CurrencyConersionValue 
 {
 
-	private Long id;  
+	  
+	@Id  
+	@Column(name="id") 	
+	private int id;  
+	
+	@Column(name="currency_from")  
 	private String from;  
+	
+	@Column(name="currency_to")  
 	private String to;  
+	
+	@Column(name="conversion_multiple") 
 	private BigDecimal conversionMultiple;
 	
 	
-	
 	public CurrencyConersionValue() {
-	
+		
 	}
 
 
 
-	public CurrencyConersionValue(Long id, String from, String to, BigDecimal conversionMultiple) {
+	public CurrencyConersionValue(int id, String from, String to, BigDecimal conversionMultiple) {
 		super();
 		this.id = id;
 		this.from = from;
@@ -28,13 +43,13 @@ public class CurrencyConersionValue
 
 
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
 
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
