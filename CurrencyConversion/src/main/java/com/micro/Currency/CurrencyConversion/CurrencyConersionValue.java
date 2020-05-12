@@ -15,7 +15,7 @@ public class CurrencyConersionValue
 	  
 	@Id  
 	@Column(name="id") 	
-	private int id;  
+	private Long id;  
 	
 	@Column(name="currency_from")  
 	private String from;  
@@ -33,7 +33,7 @@ public class CurrencyConersionValue
 
 
 
-	public CurrencyConersionValue(int id, String from, String to, BigDecimal conversionMultiple) {
+	public CurrencyConersionValue(Long id, String from, String to, BigDecimal conversionMultiple) {
 		super();
 		this.id = id;
 		this.from = from;
@@ -43,13 +43,13 @@ public class CurrencyConersionValue
 
 
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
 
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
