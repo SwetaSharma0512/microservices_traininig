@@ -5,6 +5,6 @@ spring:
       fail-fast: false
   application:
     name: currency-conversion
-  profile:
+  profiles:
     active:dev
  
