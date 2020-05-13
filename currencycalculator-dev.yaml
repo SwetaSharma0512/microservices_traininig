@@ -1,0 +1,4 @@
+currency-calculator.h2.console.enabled: true
+currency-calculator.datasource.url: "jdbc:h2:mem:currencyConv;DB_CLOSE_DELAY=-1"
+currency-calculator.datasource.username: sas
+currency-calculator.datasource.password:
