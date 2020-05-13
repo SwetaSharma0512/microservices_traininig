@@ -1,10 +1,10 @@
 spring:
   cloud:
-    config:      uri: ${currency-conversion.configserverurl:http://localhost:8888}
+    config:
+      uri: ${currency-conversion.configserverurl:http://localhost:8888}
       fail-fast: false
-    application:
-    name: currency-conversion
-  profiles:
-    active: dev
- 
-      
+      label: 
+  
+  application:    name: currency-conversion
+   
+  profiles:    active: dev    
