@@ -1,2 +1,25 @@
-  server:
-    port: 8300
+
+server:
+  port: 8300
+ 
+spring:  application:       name: currency-calculator 
+ 
+   
+feign:  client:    default-config: 
+  httpclient:    connection-timeout: 5000
+        
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+    leaseRenewalIntervalInSeconds: 2
+    leaseExpirationDurationInSeconds: 5
+    preferIpAddress: true
+    metadata-map:
+      zone: A
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    prefer-same-zone-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+     
