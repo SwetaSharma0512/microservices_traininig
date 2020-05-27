@@ -59,12 +59,14 @@ public class CurrencyCalculatorBean
 		this.to = to;
 	}
 
+	
+
 	public BigDecimal getConversionMultiple() {
 		return ConversionMultiple;
 	}
 
 	public void setConversionMultiple(BigDecimal conversionMultiple) {
-		this.ConversionMultiple = ConversionMultiple;
+		ConversionMultiple = conversionMultiple;
 	}
 
 	public BigDecimal getQuantity() {

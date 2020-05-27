@@ -76,14 +76,22 @@ public class CurrencyCalculatorController
 	{
 		
 		CurrencyCalculatorBean response= proxy.retrieveExchangeValue(from, to);
+		
+		BigDecimal conversionmultipl=response.getConversionMultiple();
+		System.out.println("Feign Ms conversion---"+response.getConversionMultiple());
+		
+		BigDecimal tota=quantity.multiply(conversionmultipl);
 		//creating a new response bean
 		//getting the response back and taking it into Bean
 			
 		System.out.println("Feign Ms---"+response.getFrom());
-		System.out.println("Feign Ms conversion---"+response.getConversionMultiple());
+		
 		System.out.println("Feign Ms quamty---"+response.getQuantity());
 		
-		return new CurrencyCalculatorBean(response.getId(), from, to, response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()));
+		logger.info("{}", response);
+		
+		return new CurrencyCalculatorBean(response.getId(), from, to, conversionmultipl, quantity,tota);
+		
 		
 		
 	}

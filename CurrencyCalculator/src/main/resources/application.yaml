@@ -6,7 +6,7 @@ spring:  application:       name: currency-calculator
  
    
 feign:  client:    default-config: 
-  httpclient:    connection-timeout: 5000
+ 
         
 eureka:
   instance:
