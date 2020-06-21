@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      uri: ${currency-calculator.configserverurl:http://localhost:8888}
+      fail-fast: false
+      label: 
+  
+    
+  profiles:    active: dev
