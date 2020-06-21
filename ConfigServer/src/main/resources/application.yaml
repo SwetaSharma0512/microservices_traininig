@@ -3,7 +3,17 @@ spring:
     config:
       server:
         git:
-          uri: C:\Users\w2cluster95\git\microservices_traininig
+          uri: C:\work\microservices_traininig
           skipSslValidation: true
+            application:    name: cloud-config
+    
+  profiles:
+    active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 server:
   port: 8888

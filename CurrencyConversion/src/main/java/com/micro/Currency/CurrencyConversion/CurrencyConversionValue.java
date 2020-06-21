@@ -1,18 +1,16 @@
 package com.micro.Currency.CurrencyConversion;
 
 import java.math.BigDecimal;
-import javax.persistence.Column;  
-import javax.persistence.Entity;  
-import javax.persistence.Id;  
-import javax.persistence.Table;  
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity  
-@Table(name="Exchange_Value") 
-public class CurrencyConersionValue 
-{
+@Table(name="Exchange_Value")
+public class CurrencyConversionValue {
 
-	  
 	@Id  
 	@Column(name="id") 	
 	private Long id;  
@@ -25,70 +23,50 @@ public class CurrencyConersionValue
 	
 	@Column(name="conversion_multiple") 
 	private BigDecimal conversionMultiple;
-	
-	
-	public CurrencyConersionValue() {
-		
+
+	public Long getId() {
+		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
 
+	public String getFrom() {
+		return from;
+	}
 
-	public CurrencyConersionValue(Long id, String from, String to, BigDecimal conversionMultiple) {
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	public BigDecimal getConversionMultiple() {
+		return conversionMultiple;
+	}
+
+	public void setConversionMultiple(BigDecimal conversionMultiple) {
+		this.conversionMultiple = conversionMultiple;
+	}
+
+	public CurrencyConversionValue() {
+		super();
+	}
+
+	public CurrencyConversionValue(Long id, String from, String to, BigDecimal conversionMultiple) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.to = to;
 		this.conversionMultiple = conversionMultiple;
 	}
-
-
-
-	public Long getId() {
-		return id;
-	}
-
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-
-	public String getFrom() {
-		return from;
-	}
-
-
-
-	public void setFrom(String from) {
-		this.from = from;
-	}
-
-
-
-	public String getTo() {
-		return to;
-	}
-
-
-
-	public void setTo(String to) {
-		this.to = to;
-	}
-
-
-
-	public BigDecimal getConversionMultiple() {
-		return conversionMultiple;
-	}
-
-
-
-	public void setConversionMultiple(BigDecimal conversionMultiple) {
-		this.conversionMultiple = conversionMultiple;
-	}
-	
 	
 	
 }

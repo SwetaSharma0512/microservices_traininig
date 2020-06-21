@@ -1,4 +1,0 @@
-currency-conversion.h2.console.enabled:	true
-currency-conversion.datasource.url: "jdbc:h2:mem:currencyConv;DB_CLOSE_DELAY=-1"
-currency-conversion.datasource.username: sas
-currency-conversion.datasource.password:
