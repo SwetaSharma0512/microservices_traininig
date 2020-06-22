@@ -2,8 +2,8 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: currency-calculator-feign
-        uri: http://localhost:8500/
+      - id: currency
+        uri: lb://CURRENCY-CALCULATOR/currency
         predicates:
-        - Path=/currency-calculator-feign/**
+        - Path=/currency/**
         
