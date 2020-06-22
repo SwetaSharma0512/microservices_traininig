@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: currencycal
+        uri: lb://currencycal
+        predicates:
+        - Path=/currency-calculator-feign/currencycal/**
+        
