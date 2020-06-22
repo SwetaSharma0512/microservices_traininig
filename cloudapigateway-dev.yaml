@@ -5,5 +5,5 @@ spring:
       - id: currencycal
         uri: lb://currencycal
         predicates:
-        - Path=/currency-calculator/retrieve/currencycal/**
+        - Path=/currencycal/**
         
