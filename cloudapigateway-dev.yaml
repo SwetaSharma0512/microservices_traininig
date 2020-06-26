@@ -2,8 +2,13 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: currency
-        uri: lb://CURRENCY-CALCULATOR/currency
+      - id: currency-calculator
+        uri: http://localhost:(server.port)/currency-calculator-feign/
         predicates:
-        - Path=/currency/**
-        
+        - Path=/currency-calculator/**
+  sleuth:
+    trace-id128: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://192.168.99.100:9411/
