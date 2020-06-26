@@ -1,14 +1,14 @@
 spring:
   cloud:
     config:
-      uri: ${cloudapigateway.configserverurl:http://localhost:8888}
+      uri: ${cloud-apigateway.configserverurl:http://localhost:8888}
       fail-fast: false
       label: 
   
-  application:    name: cloudapigateway    
+   
   profiles:    active: dev
 
-server:  port: 8089
+
   
   
   
