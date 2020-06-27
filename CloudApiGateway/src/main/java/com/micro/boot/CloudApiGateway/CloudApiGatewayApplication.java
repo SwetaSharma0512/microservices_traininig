@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 @EnableEurekaClient
-@Component
+
 public class CloudApiGatewayApplication {
 
 	public static void main(String[] args) {
