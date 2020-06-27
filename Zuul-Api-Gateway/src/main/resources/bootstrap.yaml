@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      uri: ${zuul-apigateway.configserverurl:http://localhost:8888}
+      fail-fast: false
+      label: 
+  
+   
+  profiles:    active: dev
+
+
+  
+  
+  
+
