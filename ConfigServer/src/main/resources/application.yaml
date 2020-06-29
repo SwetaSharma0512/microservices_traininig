@@ -5,6 +5,9 @@ spring:
         git:
           uri: C:\work\microservices_traininig
           skipSslValidation: true
+
+ 
+
             application:    name: cloud-config
     
   profiles:
