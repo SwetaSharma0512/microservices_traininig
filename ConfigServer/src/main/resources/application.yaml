@@ -3,7 +3,8 @@ spring:
     config:
       server:
         git:
-          uri: C:\work\microservices_traininig
+          #uri: C:\work\microservices_traininig
+          uri: https://github.com/SwetaSharma0512/microservices_traininig.git
           skipSslValidation: true
 
  
