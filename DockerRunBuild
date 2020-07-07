@@ -21,23 +21,23 @@ mvn clean package -DskipTests
 
 
 ----docker build commands ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-docker build -t swetasharma0512/myconfig:1 .
-docker build -t swetasharma0512/myeruka:1 .
+docker build -t swetasharma0512/myconfigserver:1 .
+docker build -t swetasharma0512/myeureka:1 .
 docker build -t swetasharma0512/myzuulapigateway:1 .     
 docker build -t swetasharma0512/mycurrencyconversion:1 .
 docker build -t swetasharma0512/mycurrencycalculator:1 .
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ------docker run commands in same manner::::::::::::::::::::::::
-docker run -p 8888:8888 -d --name myconfig --network bridge swetasharma0512/myconfig:1
+docker run -p 8888:8888 -d --name myconfig --network bridge swetasharma0512/myconfigserver:1
 
-docker run -p 80:8686 -d --name myeureka --network bridge swetasharma0512/myeureka:1
+docker run -p 8761:8761 -d --name myeureka --network bridge swetasharma0512/myeureka:1
 
-docker run -p 80:8686 -d --name myzuulapigateway --network bridge --env zuul-apigateway.configserverurl=http://myconfig:8888 --env zuul-apigateway.eureka.client.service-registry-url:http://myeureka:8761/eureka swetasharma0512/myzuulapigateway:1
+docker run -p 80:8686 -d --name myzuulapigateway --network bridge --env zuul-apigateway.configserverurl=http://myconfigserver:8888 --env zuul-apigateway.eureka.client.service-registry-url:http://myeureka:8761/eureka swetasharma0512/myzuulapigateway:1
 
-docker run -d --name mycurrencyconversion --network bridge --env currency-conversion.configserverurl=http://myconfig:8888 --env currency-conversion.eureka.client.service-registry-url:http://myeureka:8761/eureka swetasharma0512/mycurrencyconversion:1
+docker run -d --name mycurrencyconversion --network bridge --env currency-conversion.configserverurl=http://myconfigserver:8888 --env currency-conversion.eureka.client.service-registry-url:http://myeureka:8761/eureka swetasharma0512/mycurrencyconversion:1
 
-docker run -d --name mycurrencycalculator --network bridge --env currency-calculator.configserverurl=http://myconfig:8888 --env currency-calculator.eureka.client.service-registry-url:http://myeureka:8761/eureka swetasharma0512/mycurrencycalculator:1
+docker run -d --name mycurrencycalculator --network bridge --env currency-calculator.configserverurl=http://myconfigserver:8888 --env currency-calculator.eureka.client.service-registry-url:http://myeureka:8761/eureka swetasharma0512/mycurrencycalculator:1
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -48,3 +48,17 @@ C:\work\microservices_traininig\CurrencyConversion
 C:\work\microservices_traininig\EurekaServer
 C:\work\microservices_traininig\Zuul-Api-Gateway
 C:\work\microservices_traininig\CurrencyCalculator
+
+
+
+docker logs 088fafb3bbb8 -f   // cheking logs of running service
+
+
+
+
+
+
+
+
+
+
