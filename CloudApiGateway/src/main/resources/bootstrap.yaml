@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      uri: ${cloud-apigateway.configserverurl:http://localhost:8888}
+      uri: ${cloud-apigateway.configserverurl:http://configserver:8888}
       fail-fast: false
       label: 
   
