@@ -54,4 +54,4 @@ eureka:
     fetchRegistry: true
     prefer-same-zone-eureka: true
     serviceUrl:
-      defaultZone: http://192.168.99.100:8761/eureka
+      defaultZone: ${currency-conversion.eureka.url:http://192.168.99.100:8761/eureka}
