@@ -8,4 +8,4 @@ spring:
      fail-fast: false
   
   profiles:
-    active: dev  
+    active: dev
