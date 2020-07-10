@@ -7,7 +7,7 @@ spring:
       probability: 1.0
   zipkin:
     base-url: http://192.168.99.100:9411/
-    
+ 
   mvc:
    view:
      suffix: .html
@@ -32,11 +32,8 @@ spring:
         show_sql: true
         ddl-auto: create-drop
         
-  profiles:
-    active: dev
-
 management:
-  endpoints:
+ endpoints:
     web:
       exposure:
         include: '*'
@@ -54,4 +51,4 @@ eureka:
     fetchRegistry: true
     prefer-same-zone-eureka: true
     serviceUrl:
-      defaultZone: ${currency-conversion.eureka.url:http://192.168.99.100:8761/eureka}
+      defaultZone: http://192.168.99.100:8761/eureka
