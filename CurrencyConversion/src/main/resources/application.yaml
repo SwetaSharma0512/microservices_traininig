@@ -15,7 +15,7 @@ spring:
         
   h2:
     console:
-      enabled: ${currency-conversion.h2.console.enabled}
+      enabled: true
       path: /h2
       settings:
         web-allow-others: true
