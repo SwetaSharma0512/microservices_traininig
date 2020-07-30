@@ -20,9 +20,9 @@ spring:
       settings:
         web-allow-others: true
   datasource:
-    url: ${currency-conversion.datasource.url}
-    username: ${currency-conversion.datasource.username}
-    password: ${currency-conversion.datasource.password}
+    url: jdbc:h2:mem:currencyConversion;DB_CLOSE_DELAY=-1
+    username: sas
+    password: 
     driver-class-name: org.h2.Driver
     
   jpa:
