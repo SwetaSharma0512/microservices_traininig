@@ -53,7 +53,7 @@ C:\work\microservices_traininig\CurrencyCalculator
 
 docker logs 088fafb3bbb8 -f   // cheking logs of running service
 
-
+docker push swetasharma0512/myconfigserver:1
 
 
 

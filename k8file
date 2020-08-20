@@ -1,0 +1,39 @@
+All nodes-
+____________________
+
+sudo swapoff -a
+
+
+Master node
+_____________________________
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+cat /home/master/.kube/config
+
+kubectl get nodes
+
+kubectl get secrets
+
+kubectl describe secret default-token-gz67d 
+
+
+in project cmd for windows:::::::::::::::::::::::::::::::::::::::::::::::::;
+____________________________________________________________________
+kubectl config get-contexts
+
+kubectl config set-cluster k8svb --insecure-skip-tls-verify=true --server=https://192.168.99.104:6443
+
+kubectl config get-clusters
+
+kubectl config set-context k8svb
+
+kubectl config set-credentials defaultUser --token= provide token here 
+
+(
+kubectl config set-credentials clusteradmin --client-certificate=client-certificate --client-key=client-key
+)
+
+kubectl config set-context k8svb --cluster=k8svb --user=defaultUser
+
+kubectl config use-contexts k8svb
+
