@@ -6,7 +6,7 @@ spring:
     name: zuul-apigateway
 
   zipkin:
-    base-url: http://192.168.99.100:9411/
+    base-url: http://192.168.99.101:9411/
   sleuth:
     trace-id128: true
     sampler:
@@ -17,7 +17,8 @@ zuul:
   routes: 
     currency-conversion:
       path: /currency-conversion/retrieve/**
-  
+  host:
+    socket-timeout-millis: 3000  
   
 management:
   endpoints:
@@ -38,4 +39,4 @@ eureka:
     fetchRegistry: true
     prefer-same-zone-eureka: true
     serviceUrl:
-      defaultZone: http://192.168.99.100:8761/eureka
+      defaultZone: ${zuul-apigateway.eureka.url:http://192.168.99.101:8761/eureka}
