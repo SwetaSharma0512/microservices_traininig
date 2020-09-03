@@ -7,17 +7,24 @@ spring:
 
   zipkin:
     base-url: http://192.168.99.101:9411/
+  rabbitmq:
+    host: 192.168.99.101
+    port: 5672
+  cloud:
+    bus:
+      enabled: true
+      destination: configXchangebus
+  
   sleuth:
     trace-id128: true
     sampler:
       probability: 1.0
-  
-
+ 
 zuul:
   routes: 
     currency-conversion:
       path: /currency-conversion/retrieve/**
-
+    
   
 management:
   endpoints:
