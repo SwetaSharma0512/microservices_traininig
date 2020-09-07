@@ -1,10 +1,21 @@
-
 server:
   port: 0
  
-spring:  application:       name: currency-calculator 
- 
-   
+spring:  application:       name: currency-calculator
+
+  sleuth:
+    trace-id128: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://192.168.99.101:9411/
+  rabbitmq:
+    host: 192.168.99.101
+    port: 5672
+  cloud:
+    bus:
+      enabled: true
+      destination: configXchangebus
 feign:  client:    default-config:   hystrix:    enabled: true
  
 management:
@@ -26,4 +37,9 @@ eureka:
     prefer-same-zone-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
-     
+#     defaultZone: http://192.168.99.101:8761/eureka
+      
+logging:
+  pattern:
+    level: "[%X{X-B3-TraceId} : %X{X-B3-SpanId}] %-5p [%t] %C{2} - %m%n"
+         

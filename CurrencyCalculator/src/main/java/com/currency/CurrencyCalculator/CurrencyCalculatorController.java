@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -71,9 +71,10 @@ public class CurrencyCalculatorController
 
 	@GetMapping("/currency-calculator-feign/from/{from}/to/{to}/quantity/{quantity}")
 	
+	
 	//configuring a fallback method  
 	@HystrixCommand(fallbackMethod="fallbackPlan")
-	
+	@LoadBalanced
 	public CurrencyCalculatorBean currencyfeign(@PathVariable String from,@PathVariable String to, @PathVariable BigDecimal quantity)
 			throws InterruptedException
 	{
