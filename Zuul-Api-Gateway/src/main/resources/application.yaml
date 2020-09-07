@@ -24,7 +24,8 @@ zuul:
   routes: 
     currency-conversion:
       path: /currency-conversion/retrieve/**
-    
+    currency-calculator:
+      path: /currency-calculator-feign/**    
   
 management:
   endpoints:
