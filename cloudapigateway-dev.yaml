@@ -10,4 +10,4 @@ spring:
       - id: currency-conversion
         uri: http://localhost:8082/
         predicates:
-        - Path=/retrieve/**
+        - Path=/currency-conversion/retrieve/**
