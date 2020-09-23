@@ -5,9 +5,8 @@ spring:
         enabled: true
 
       
-      routes:
-      
-      - id: currency-conversion
+      routes:    
+      - id: conversion
         uri: currency-conversion
         predicates:
         - Path=/currency-conversion/retrieve/**
