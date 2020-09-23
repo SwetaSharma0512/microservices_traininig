@@ -3,7 +3,7 @@ server:
   
 spring:
   application:
-    name: cloud-apigateway  
+    name: cloudapigateway  
   
   cloud:
     gateway:
