@@ -1,0 +1,12 @@
+http://localhost:8888/config/dev
+http://localhost:8888/config/default
+
+http://localhost:8761/
+
+http://localhost:8200/currency-conversion/retrieve/from/EUR/to/INR
+http://localhost:52917/currency-calculator-feign/from/EUR/to/INR/quantity/90
+
+http://localhost:8686/currency-calculator-feign/currency-calculator-feign/from/EUR/to/INR/quantity/90
+http://localhost:8686/currency-conversion/retrieve/currency-conversion/retrieve/from/EUR/to/INR
+
+
