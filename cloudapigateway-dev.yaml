@@ -7,6 +7,6 @@ spring:
       
       routes:    
       - id: conversion
-        uri: /currency-conversion/retrieve/**
+        uri: localhost:8200
         predicates:
         - Path=/currency-conversion/retrieve/**
